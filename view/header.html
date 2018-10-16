@@ -1,0 +1,32 @@
+<!-- 导航-->
+<div class="row bg-danger" >
+  <div class="container">
+    <div class="row ">
+      <nav id="app" class="navbar navbar-expand-md navbar-dark">
+        <!-- 最前面的标题文字不隐藏-->
+        <a class="btn btn-lg btn-danger" :href="navbar[2].href" class="navbar-brand" v-cloak>{{navbar[2].navname}}</a>
+        <!-- 在小屏幕下出现的按钮 -->
+        <button class="navbar-toggler navbar-dark" data-toggle="collapse" data-target="#c-navbar">
+          <!-- 三个短横线的图标 -->
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- 导航内容 -->
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav">
+            <li v-for="n in navbar.slice(3)"><a class="btn btn-danger" target="_blank" :href="n.href">{{n.navname}}</a></li>
+          </ul>
+          <ul id="signout" class="navbar-nav">
+            <!-- <li v-for="(n,i) in navbar" v-if="i<2"><a class="btn btn-danger" target="_blank" :href="n.href">{{n.navname}}</a></li> -->
+            <li><a id="#btnLogin" class="btn btn-danger" target="_blank" href="login.html">登录</a></li>
+            <li><a class="btn btn-danger" target="_blank" href="#">注册</a></li>
+          </ul>
+          <ul id="signin" class="navbar-nav">
+            <li><a id="uname" class="btn btn-danger" target="_blank" href="user.html">个人中心</a></li>
+            <li><a class="btn btn-danger" target="_blank" href="#">退出</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+

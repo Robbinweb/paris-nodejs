@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- Bootstrap core CSS -->
+  <link href="../css/bootstrap.css" rel="stylesheet">
+  <style>
+      .quantity-remove, .quantity-add {  
+        cursor: pointer;  
+    }  
+    .quantity-add.glyphicon, .quantity-remove.glyphicon {  
+        display: block;  
+        cursor: pointer;  
+    }  
+  </style>
+</head>
+<body>
+    <div class="container">  
+        <div class="row">  
+            <h2>Quantity Control</h2>  
+              
+               <div class="item col-xs-6 col-lg-6">  
+                    <div class="row">  
+                        <div class="col-md-12">  
+                            <div class="form-group form-group-options">  
+                                <div id="1" class="input-group input-group-option quantity-wrapper">  
+                                  
+                                    <span  class="input-group-addon input-group-addon-remove quantity-remove btn">  
+                                        <span class="glyphicon glyphicon-minus"></span>  
+                                    </span>  
+                                      
+                                    <input  id="1inp" type="text" value="6" name="option[]" class="form-control quantity-count" placeholder="1">  
+      
+                                    <span class="input-group-addon input-group-addon-remove quantity-add btn">  
+                                        <span class="glyphicon glyphicon-plus"></span>  
+                                    </span>  
+                                      
+                                </div>  
+                                  
+                            </div>  
+                        </div>  
+                        <div class="col-md-12">  
+                            <button type="button" class="btn btn-danger quantity-delete">  
+                                <span class="glyphicon glyphicon-remove"></span>Entfernen  
+                            </button>  
+                        </div>  
+                    </div><!--/Row-->  
+                </div><!--/Item-->     
+      
+               <div class="item col-xs-6 col-lg-6">  
+                    <div class="row">  
+                        <div class="col-md-10">  
+                            <div class="form-group form-group-options">  
+                                <div id="2" class="input-group input-group-option quantity-wrapper">  
+                                  
+                                    <span  class="input-group-addon input-group-addon-remove quantity-remove btn">  
+                                        <span class="glyphicon glyphicon-minus"></span>  
+                                    </span>  
+                                      
+                                    <input  id="2inp" type="text" value="6" name="option[]" class="form-control quantity-count" placeholder="1">  
+      
+                                    <span class="input-group-addon input-group-addon-remove quantity-add btn">  
+                                        <span class="glyphicon glyphicon-plus"></span>  
+                                    </span>  
+                                      
+                                </div>  
+                                  
+                            </div>  
+                        </div>  
+                        <div class="col-md-2">  
+                            <button type="button" class="btn btn-danger quantity-delete">  
+                                <span class="glyphicon glyphicon-remove"></span>  
+                            </button>  
+                        </div>  
+                    </div><!--/Row-->  
+                </div><!--/Item-->        
+         
+      
+               <div class="item col-xs-6 col-lg-6">  
+                    <div class="row">  
+                        <div class="col-md-10">  
+                            <div class="form-group form-group-options">  
+                                <div id="3" class="input-group input-group-option quantity-wrapper">  
+                                  
+                                    <span  class="input-group-addon input-group-addon-remove quantity-remove btn">  
+                                        <span class="glyphicon glyphicon-minus"></span>  
+                                    </span>  
+                                      
+                                    <input  id="3inp" type="text" value="6" name="option[]" class="form-control quantity-count" placeholder="1">  
+      
+                                    <span class="input-group-addon input-group-addon-remove quantity-add btn">  
+                                        <span class="glyphicon glyphicon-plus"></span>  
+                                    </span>  
+                                      
+                                </div>  
+                                  
+                            </div>  
+                        </div>  
+                        <div class="col-md-2">  
+                            <button type="button" class="btn btn-danger quantity-delete">  
+                                <span class="glyphicon glyphicon-remove"></span>  
+                            </button>  
+                        </div>  
+                    </div><!--/Row-->  
+                </div><!--/Item-->              
+      
+              
+        </div>  
+    </div>
+    <script>
+        $(document).ready(function(){  
+  
+          //Add  
+          $(".quantity-add").click(function(e){  
+              //Vars  
+              var count = 1;  
+              var newcount = 0;  
+                
+              //Wert holen + Rechnen  
+              var elemID = $(this).parent().attr("id");  
+              var countField = $("#"+elemID+'inp');  
+              var count = $("#"+elemID+'inp').val();  
+              var newcount = parseInt(count) + 1;  
+                
+              //Neuen Wert setzen  
+              $("#"+elemID+'inp').val(newcount);  
+          });  
+        
+          //Remove  
+          $(".quantity-remove").click(function(e){  
+              //Vars  
+              var count = 1;  
+              var newcount = 0;  
+                
+              //Wert holen + Rechnen  
+              var elemID = $(this).parent().attr("id");  
+              var countField = $("#"+elemID+'inp');  
+              var count = $("#"+elemID+'inp').val();  
+              var newcount = parseInt(count) - 1;  
+                
+              //Neuen Wert setzen  
+              $("#"+elemID+'inp').val(newcount);  
+                
+          });  
+        
+        
+          //Delete  
+          $(".quantity-delete").click(function(e){  
+              //Vars  
+              var count = 1;  
+              var newcount = 0;  
+                
+              //Wert holen + Rechnen  
+              var elemID = $(this).parent().attr("id");  
+              var countField = $("#"+elemID+'inp');  
+              var count = $("#"+elemID+'inp').val();  
+              var newcount = parseInt(count) - 1;  
+                
+              //Neuen Wert setzen  
+              //$('.item').html('');  
+                
+             var row = $( ".row" );  
+              $(event.target).closest(row).html('');  
+          });  
+        
+            
+      });  
+    </script>  
+</body>
+</html>

@@ -1,0 +1,69 @@
+body{
+  padding: 0 auto;
+  margin:  0 auto;
+
+}
+[v-cloak] {
+  display: none !important;
+}
+
+/* header */
+#head{
+  z-index: 100;
+}
+
+/* main */
+#main{
+  margin-top: 64px;
+}
+
+/*定制电梯按钮的样式*/
+#main>.btn-group-vertical{
+  top:200px;
+  left:10px;
+}
+#main>.btn-group-vertical>.btn-secondary:hover {
+  background-color: #e4393c;
+  border-color: #e4393c;
+}
+
+/* 客照详情页 */
+#piclist{
+  top:120px;
+  right:330px;
+  z-index: 10;
+}
+#piclist img{
+  width: 310px;
+}
+.d1 {
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: linear; }
+.d1:hover {
+  background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+}
+
+/* footer */
+#footer{
+  background: #222222;
+}
+
+/* 商品详情 */
+#buy-num{
+  width: 40px;
+}
+#msgimg {
+  width: 30px;
+  height: 30px;
+}
+/* section{
+  height: 500vh;
+} */
+.g-img{
+  background-image: url(./img/carousel/2-2.jpg);
+  background-attachment: fixed;
+  /*background-attachment: local;*/
+  background-size: cover;
+  background-position: center center;
+}
